@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Артём Сапожников | Актёрское портфолио</title>
+    <meta name="description" content="Портфолио актёра Артёма Сапожникова. Театральный и съёмочный опыт.">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Артём Сапожников | Актёрское портфолио">
+    <meta property="og:description" content="Актёр. Театральный и съёмочный опыт.">
+    <meta property="og:type" content="profile">
+    <meta property="og:image" content="assets/og-image.webp">
+    
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="https://yourdomain.com/">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Артём Сапожников",
+      "jobTitle": "Actor",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Herceg-Novi",
+        "addressCountry": "ME"
+      }
+    }
+    </script>
+
+    <style>
+        /* Базовые стили */
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.8;
+            color: #2b2b2b;
+            background-color: #fafafa;
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 50px 20px;
+        }
+
+        /* Навигация и переключатель языков */
+        .language-switcher {
+            text-align: right;
+            margin-bottom: 3rem;
+            font-family: 'Arial', sans-serif;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .language-switcher button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #707070;
+            min-height: 44px;
+            min-width: 44px;
+            padding: 10px;
+            transition: color 0.3s ease;
+        }
+
+        .language-switcher button:hover {
+            color: #000;
+        }
+
+        .language-switcher button.active {
+            font-weight: bold;
+            color: #000;
+            text-decoration: underline;
+            text-underline-offset: 4px;
+        }
+
+        .language-switcher button:focus-visible {
+            outline: 2px solid #2b2b2b;
+            border-radius: 4px;
+        }
+
+        /* Типографика */
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 400;
+            text-align: center;
+            margin-bottom: 0.2rem;
+            letter-spacing: -0.5px;
+        }
+
+        .subtitle {
+            text-align: center;
+            font-style: italic;
+            color: #666;
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+        }
+
+        h2 {
+            font-size: 1.6rem;
+            font-weight: 400;
+            margin-top: 3rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid #eaeaea;
+            padding-bottom: 10px;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            text-align: justify;
+        }
+
+        a {
+            color: #2b2b2b;
+            text-decoration: none;
+            border-bottom: 1px solid #ccc;
+            transition: border-color 0.3s;
+        }
+
+        a:hover {
+            border-bottom-color: #2b2b2b;
+        }
+
+        /* Блоки с информацией */
+        .meta-info {
+            background-color: #f2f2f2;
+            padding: 1.5rem;
+            border-radius: 4px;
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+        }
+
+        .meta-info p {
+            margin: 0.5rem 0;
+            text-align: left;
+        }
+
+        .contact-info {
+            margin-top: 2rem;
+            padding: 1rem;
+            background-color: #eef2f5;
+            border-left: 4px solid #667085;
+        }
+
+        /* Репертуар */
+        details {
+            margin-bottom: 2rem;
+        }
+
+        summary {
+            font-size: 1.6rem;
+            font-weight: 400;
+            margin-top: 3rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid #eaeaea;
+            padding-bottom: 10px;
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary::after {
+            content: '▼';
+            font-size: 1rem;
+            color: #666;
+            transition: transform 0.3s;
+        }
+
+        details[open] summary::after {
+            transform: rotate(180deg);
+        }
+
+        summary:focus-visible {
+            outline: 2px solid #2b2b2b;
+            border-radius: 4px;
+        }
+
+        ul.repertoire {
+            list-style-type: none;
+            padding: 0;
+            margin: 0 0 2rem 0;
+            animation: fadeIn 0.4s ease-in-out;
+        }
+
+        ul.repertoire li {
+            margin-bottom: 1.2rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        ul.repertoire li::before {
+            content: '—';
+            position: absolute;
+            left: 0;
+            color: #999;
+        }
+
+        .role {
+            font-style: italic;
+            color: #444;
+        }
+
+        .date-badge {
+            font-family: 'Arial', sans-serif;
+            font-weight: bold;
+            color: #6f6f8e; 
+            margin-right: 8px;
+            font-size: 0.95rem;
+        }
+
+        /* Секции языков */
+        .lang-section {
+            display: none;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .lang-section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Сетка фотографий (Mobile First) */
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            border-top: 3px solid #2b2b2b;
+            border-left: 3px solid #2b2b2b;
+            margin-top: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .grid-item {
+            border-right: 3px solid #2b2b2b;
+            border-bottom: 3px solid #2b2b2b;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 280px;
+        }
+
+        .grid-text {
+            background-color: #667085;
+            color: #ffffff;
+            padding: 2rem;
+            text-align: center;
+            font-size: 1.05rem;
+            line-height: 1.6;
+        }
+
+        .grid-photo {
+            padding: 0;
+            overflow: hidden;
+            background-color: #fff;
+        }
+
+        .grid-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Десктопная версия: строгий шахматный порядок */
+        @media (min-width: 601px) {
+            .grid-container { 
+                grid-template-columns: 1fr 1fr; 
+            }
+            
+            /* Явное указание порядка для всех элементов, чтобы ничего не сбилось */
+            .grid-container .grid-item:nth-child(1) { order: 1; }
+            .grid-container .grid-item:nth-child(2) { order: 2; }
+            
+            /* Меняем местами фото и текст только во ВТОРОМ ряду */
+            .grid-container .grid-item:nth-child(3) { order: 4; } /* Текст 2 уходит вправо */
+            .grid-container .grid-item:nth-child(4) { order: 3; } /* Фото 2 встает слева */
+            
+            /* Жестко фиксируем третий ряд */
+            .grid-container .grid-item:nth-child(5) { order: 5; }
+            .grid-container .grid-item:nth-child(6) { order: 6; }
+        }
+
+        /* Адаптивность для мобильных */
+        @media (max-width: 600px) {
+            h1 { font-size: 2.2rem; }
+            body { padding: 30px 15px; }
+            .meta-info { padding: 1rem; }
+            .grid-item { min-height: 220px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Навигация -->
+    <nav class="language-switcher" aria-label="Language selection">
+        <button onclick="switchLanguage('ru')" id="btn-ru" class="active" aria-pressed="true">Русский</button> |
+        <button onclick="switchLanguage('sr')" id="btn-sr" aria-pressed="false">Srpski</button>
+    </nav>
+
+    <!-- РУССКАЯ ВЕРСИЯ -->
+    <article id="content-ru" class="lang-section active">
+        <header>
+            <h1>Артём Сапожников</h1>
+            <div class="subtitle">Актёр. Театральный и съёмочный опыт</div>
+        </header>
+
+        <div class="meta-info">
+            <p><strong>Возраст:</strong> 16 лет &nbsp;|&nbsp; <strong>Игровой возраст:</strong> 8-60+</p>
+            <p><strong>Параметры:</strong> Рост 180 см &nbsp;|&nbsp; Вес 77 кг &nbsp;|&nbsp; Глаза: голубые &nbsp;|&nbsp; Волосы: медовые</p>
+            <p><strong>Город:</strong> Herceg-Novi</p>
+            <p><strong>Языки:</strong> Русский — родной, сербский — B2, английский — B1</p>
+        </div>
+
+        <section>
+            <h2>О себе</h2>
+            <p>С 2022 года занимаюсь в студии <a href="https://www.instagram.com/theater_montenegro/" target="_blank" rel="noopener noreferrer">Theater.Tochka</a>. Играю характерные и драматические роли, работаю в классических и авторских постановках. Имею опыт работы в театре теней: управление теневыми куклами и участие в создании декораций.</p>
+        </section>
+
+        <div class="contact-info">
+            <strong>По вопросам съёмок и сотрудничества:</strong><br>
+            Telegram: Ольга Сапожникова (агент/представитель) +79517282624
+        </div>
+
+        <details open>
+            <summary>Опыт и репертуар</summary>
+            <ul class="repertoire">
+                <li><span class="date-badge">2026</span> <strong><a href="https://photoblag.ru/disk/teatr-tochka-ogni-sv-dominika-02g5d9" target="_blank" rel="noopener noreferrer">«Огни святого Доминика»</a></strong> — <span class="role">Второй халдей, Диего, Фра Нуньо</span>. Theater.Tochka, режиссёр: Максим Чацкий.</li>
+                <li><span class="date-badge">2025–2026</span> <strong>«Мойры»</strong> — <span class="role">Вторая мойра</span>. Авторский спектакль (3 показа, Theater.Tochka, Herceg-Novi), режиссёр: Максим Чацкий.</li>
+                <li><span class="date-badge">2025</span> <strong><a href="https://youtu.be/rfEtKYQOEyk" target="_blank" rel="noopener noreferrer">«Фонарщик»</a></strong> — <span class="role">Няня / Бабушка</span>. По мотивам сказок Х. К. Андерсена, режиссёр: Максим Чацкий.</li>
+                <li><span class="date-badge">2025</span> <strong><a href="https://youtu.be/LOGAfCiLMPs" target="_blank" rel="noopener noreferrer">«Башня из слоновой кости»</a></strong> (Oxxxymiron) — <span class="role">Марк</span>. Неофициальный музыкальный клип.</li>
+                <li><span class="date-badge">2024</span> <strong><a href="https://youtu.be/JVtx9pbpFK8" target="_blank" rel="noopener noreferrer">«Дракон»</a></strong> — <span class="role">Бургомистр</span>. По пьесе Евгения Шварца, режиссёр: Максим Чацкий.</li>
+                <li><span class="date-badge">2023</span> <strong><a href="https://youtu.be/qdtyPCjHHis" target="_blank" rel="noopener noreferrer">«Прощайте, вишни!»</a></strong> — <span class="role">Роль: «Можно уйти?»</span>. Авторский спектакль, режиссёр: Максим Чацкий.</li>
+            </ul>
+        </details>
+
+        <!-- Галерея -->
+        <div class="grid-container">
+            <!-- Ряд 1 (Отображается как Текст - Фото) -->
+            <div class="grid-item grid-text">
+                Характерные и драматические роли, требующие яркой актёрской выразительности.
+            </div>
+            <div class="grid-item grid-photo">
+                <img src="assets/photo-1.webp" alt="Портрет актёра, экспрессия" width="600" height="800" loading="lazy" decoding="async">
+            </div>
+
+            <!-- Ряд 2 (На ПК станет Фото - Текст) -->
+            <div class="grid-item grid-text">
+                Спектакль «Дракон». Роль Бургомистра, 2024 г.
+            </div>
+            <div class="grid-item grid-photo">
+                <img src="assets/photo-2.webp" alt="Сцена из спектакля Дракон" width="600" height="800" loading="lazy" decoding="async">
+            </div>
+
+            <!-- Ряд 3 (Отображается как Текст - Фото) -->
+            <div class="grid-item grid-text">
+                Опыт создания декораций и работы в театре теней.
+            </div>
+            <div class="grid-item grid-photo">
+                <img src="assets/photo-3.webp" alt="Сцена из спектакля, театр теней" width="600" height="800" loading="lazy" decoding="async">
+            </div>
+        </div>
+    </article>
+
+    <!-- СЕРБСКАЯ ВЕРСИЯ (ЛАТИНИЦА) -->
+    <article id="content-sr" class="lang-section">
+        <header>
+            <h1>Artem Sapožnikov</h1>
+            <div class="subtitle">Glumac. Pozorišno i filmsko iskustvo</div>
+        </header>
+
+        <div class="meta-info">
+            <p><strong>Godine:</strong> 16 godina &nbsp;|&nbsp; <strong>Uzrast za uloge:</strong> 8-60+</p>
+            <p><strong>Izgled:</strong> Visina 180 cm &nbsp;|&nbsp; Težina 77 kg &nbsp;|&nbsp; Oči: plave &nbsp;|&nbsp; Kosa: zlatna (boja meda)</p>
+            <p><strong>Grad:</strong> Herceg-Novi</p>
+            <p><strong>Jezici:</strong> Ruski — maternji, Srpski — B2, Engleski — B1</p>
+        </div>
+
+        <section>
+            <h2>O meni</h2>
+            <p>Od 2022. godine član sam studija <a href="https://www.instagram.com/theater_montenegro/" target="_blank" rel="noopener noreferrer">Theater.Tochka</a>. Igram karakterne i dramske uloge, radim u klasičnim i autorskim predstavama. Imam iskustvo u radu sa pozorištem senki: upravljanje lutkama iz senke i učešće u izradi scenografije.</p>
+        </section>
+
+        <div class="contact-info">
+            <strong>Za snimanja i saradnju:</strong><br>
+            Telegram: Olga Sapožnikova (agent/zastupnik) +79517282624
+        </div>
+
+        <details open>
+            <summary>Iskustvo i repertoar</summary>
+            <ul class="repertoire">
+                <li><span class="date-badge">2026</span> <strong><a href="https://photoblag.ru/disk/teatr-tochka-ogni-sv-dominika-02g5d9" target="_blank" rel="noopener noreferrer">„Vatre Svetog Dominika“</a></strong> — <span class="role">Drugi haldejac, Dijego, Fra Nunjo</span>. Theater.Tochka, režija: Maksim Čacki.</li>
+                <li><span class="date-badge">2025–2026</span> <strong>„Mojre“</strong> — <span class="role">Druga mojra</span>. Autorska predstava (3 izvođenja, Theater.Tochka, Herceg-Novi), režija: Maksim Čacki.</li>
+                <li><span class="date-badge">2025</span> <strong><a href="https://youtu.be/rfEtKYQOEyk" target="_blank" rel="noopener noreferrer">„Fenjerdžija“</a></strong> — <span class="role">Dadilja / Baka</span>. Po motivima H. K. Andersena, režija: Maksim Čacki.</li>
+                <li><span class="date-badge">2025</span> <strong><a href="https://youtu.be/LOGAfCiLMPs" target="_blank" rel="noopener noreferrer">„Kula od slonovače“</a></strong> (Oxxxymiron) — <span class="role">Mark</span>. Nezvanični muzički spot.</li>
+                <li><span class="date-badge">2024</span> <strong><a href="https://youtu.be/JVtx9pbpFK8" target="_blank" rel="noopener noreferrer">„Zmaj“</a></strong> — <span class="role">Gradonačelnik (Burgmajstor)</span>. Po drami Jevgenija Švarca, režija: Maksim Čacki.</li>
+                <li><span class="date-badge">2023</span> <strong><a href="https://youtu.be/qdtyPCjHHis" target="_blank" rel="noopener noreferrer">„Zbogom višnje!“</a></strong> — <span class="role">Uloga: „Može li se otići?“</span>. Autorska predstava, režija: Maksim Čacki.</li>
+            </ul>
+        </details>
+
+        <!-- Galerija (Srpski) -->
+        <div class="grid-container">
+            <!-- Red 1 -->
+            <div class="grid-item grid-text">
+                Karakterne i dramske uloge koje zahtevaju izražajnu glumačku ekspresiju.
+            </div>
+            <div class="grid-item grid-photo">
+                <img src="assets/photo-1.webp" alt="Portret glumca, ekspresija" width="600" height="800" loading="lazy" decoding="async">
+            </div>
+
+            <!-- Red 2 -->
+            <div class="grid-item grid-text">
+                Predstava „Zmaj“. Uloga Gradonačelnika, 2024.
+            </div>
+            <div class="grid-item grid-photo">
+                <img src="assets/photo-2.webp" alt="Scena iz predstave Zmaj" width="600" height="800" loading="lazy" decoding="async">
+            </div>
+
+            <!-- Red 3 -->
+            <div class="grid-item grid-text">
+                Iskustvo u izradi scenografije i radu u pozorištu senki.
+            </div>
+            <div class="grid-item grid-photo">
+                <img src="assets/photo-3.webp" alt="Scena iz predstave, pozorište senki" width="600" height="800" loading="lazy" decoding="async">
+            </div>
+        </div>
+    </article>
+
+    <script>
+        const seoData = {
+            ru: {
+                title: "Артём Сапожников | Актёрское портфолио",
+                desc: "Портфолио актёра Артёма Сапожникова. Театральный и съёмочный опыт.",
+                langCode: "ru"
+            },
+            sr: {
+                title: "Artem Sapožnikov | Glumački portfolio",
+                desc: "Portfolio glumca Artema Sapožnikova. Pozorišno i filmsko iskustvo.",
+                langCode: "sr-Latn"
+            }
+        };
+
+        function switchLanguage(lang) {
+            // Обновляем URL без перезагрузки
+            const url = new URL(window.location);
+            url.searchParams.set('lang', lang);
+            window.history.pushState({}, '', url);
+
+            // SEO обновления
+            document.documentElement.lang = seoData[lang].langCode;
+            document.title = seoData[lang].title;
+            const metaDesc = document.querySelector('meta[name="description"]');
+            if (metaDesc) metaDesc.setAttribute('content', seoData[lang].desc);
+
+            // Переключение контента
+            document.querySelectorAll('.lang-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.querySelectorAll('.language-switcher button').forEach(button => {
+                button.classList.remove('active');
+                button.setAttribute('aria-pressed', 'false');
+            });
+
+            document.getElementById('content-' + lang).classList.add('active');
+            const activeBtn = document.getElementById('btn-' + lang);
+            activeBtn.classList.add('active');
+            activeBtn.setAttribute('aria-pressed', 'true');
+        }
+
+        // Проверка URL при загрузке страницы
+        window.addEventListener('DOMContentLoaded', () => {
+            const params = new URLSearchParams(window.location.search);
+            const lang = params.get('lang');
+            if (lang === 'sr' || lang === 'ru') {
+                switchLanguage(lang);
+            }
+        });
+    </script>
+
+</body>
+</html>
