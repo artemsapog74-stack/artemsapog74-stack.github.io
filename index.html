@@ -437,8 +437,8 @@
 
         <div class="contact-info">
             <strong>Podaci za kontakt:</strong><br>
-            Viber: Olga Sapožnikova (predstavnik) <button class="phone-copy" type="button" onclick="copyPhone('+38263225802', this)" title="Kliknite da kopirate broj">+38263225802</button><br>
-            Viber: Artem Sapožnikov <button class="phone-copy" type="button" onclick="copyPhone('+38268474941', this)" title="Kliknite da kopirate broj">+38268474941</button>
+            Viber: Olga Sapožnikova (predstavnik) <button class="phone-copy" type="button" data-copied="Kopirano!" onclick="copyPhone('+38263225802', this)" title="Kliknite da kopirate broj">+38263225802</button><br>
+            Viber: Artem Sapožnikov <button class="phone-copy" type="button" data-copied="Kopirano!" onclick="copyPhone('+38268474941', this)" title="Kliknite da kopirate broj">+38268474941</button>
         </div>
 
         <details open>
@@ -502,7 +502,7 @@
             try {
                 await navigator.clipboard.writeText(phone);
                 const originalText = button.textContent;
-                button.textContent = 'Скопировано!';
+                button.textContent = button.dataset.copied || 'Скопировано!';
                 window.setTimeout(() => { button.textContent = originalText; }, 1500);
             } catch (error) {
                 const temporaryInput = document.createElement('textarea');
@@ -515,7 +515,7 @@
                 temporaryInput.remove();
                 if (copied) {
                     const originalText = button.textContent;
-                    button.textContent = 'Скопировано!';
+                    button.textContent = button.dataset.copied || 'Скопировано!';
                     window.setTimeout(() => { button.textContent = originalText; }, 1500);
                 }
             }
